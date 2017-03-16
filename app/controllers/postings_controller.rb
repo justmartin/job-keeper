@@ -1,5 +1,6 @@
 class PostingsController < ApplicationController
   before_action :set_posting, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :show, :create, :edit, :update, :destroy]
 
   def index
@@ -43,6 +44,11 @@ class PostingsController < ApplicationController
   private
     def set_posting
       @posting = Posting.find(params[:id])
+    end
+
+    def correct_user
+      @posting = current_user.postings.find_by(id: params[:id])
+      redirect_to postings_path, notice: "Not authorized to edit this posting." if @posting.nil? 
     end
 
     def posting_params
