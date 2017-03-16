@@ -1,11 +1,14 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+  <!-- Hamburger Collapse -->
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <a class="navbar-brand" href="/">Job Keeper</a>
 
-  <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item">
           <a><%= link_to "Sign Out", destroy_user_session_path, class: "nav-link", method: :delete %></a>
@@ -20,4 +23,5 @@
       <% end %>
     </ul>
   </div>
+
 </nav>
