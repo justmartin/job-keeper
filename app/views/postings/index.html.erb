@@ -33,4 +33,6 @@
 
 <br>
 
-<%= link_to 'New Posting', new_posting_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Posting', new_posting_path %>
+<% end %>

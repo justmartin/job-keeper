@@ -15,5 +15,7 @@
   <%= @posting.date %>
 </p>
 
-<%= link_to 'Edit', edit_posting_path(@posting) %> |
-<%= link_to 'Back', postings_path %>
+<% if @posting.user == current_user %>
+	<%= link_to 'Edit', edit_posting_path(@posting) %> |
+	<%= link_to 'Back', postings_path %>
+<% end %>
