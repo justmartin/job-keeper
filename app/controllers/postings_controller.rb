@@ -1,5 +1,6 @@
 class PostingsController < ApplicationController
   before_action :set_posting, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :create, :edit, :update, :destroy]
 
   def index
     @postings = Posting.all
@@ -9,14 +10,14 @@ class PostingsController < ApplicationController
   end
 
   def new
-    @posting = Posting.new
+    @posting = current_user.postings.build
   end
 
   def edit
   end
 
   def create
-    @posting = Posting.new(posting_params)
+    @posting = current_user.postings.build(posting_params)
 
     if @posting.save
       redirect_to @posting, notice: 'Posting was successfully created.'
