@@ -4,7 +4,7 @@ class PostingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show, :create, :edit, :update, :destroy]
 
   def index
-    @postings = Posting.all
+    @postings = current_user.postings
   end
 
   def show
