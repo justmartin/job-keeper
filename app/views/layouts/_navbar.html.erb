@@ -11,6 +11,9 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item">
+          <a><%= link_to "Home", postings_path, class: "nav-link" %></a>
+        </li> 
+        <li class="nav-item">
           <a><%= link_to "Sign Out", destroy_user_session_path, class: "nav-link", method: :delete %></a>
         </li>
       <% else %>
