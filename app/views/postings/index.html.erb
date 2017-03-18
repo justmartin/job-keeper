@@ -1,43 +1,48 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<div class="parallax parallax-postings"> 
+  <h1 id="postings-headline" class="text-center">Your Job Postings</h1>
+  <p id="postings-sub-headline" class="text-center">Keep It Up</p>
+</div>
 
-  <h1>Postings</h1>
+<div class="content-section">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
 
-  <table class="table">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th>Company</th>
-        <th>Position</th>
-        <th>Date Applied</th>
-        <th>User Email</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @postings.each do |posting| %>
+    <table class="table table-striped">
+      <thead class="thead-inverse">
         <tr>
-          <td><%= posting.id %></td>
-          <td><%= posting.company %></td>
-          <td><%= posting.position %></td>
-          <td><%= posting.date %></td>
-          <td><%= posting.user.email if posting.user %></td>
-
-          <% if posting.user == current_user %>
-            <td><%= link_to 'Show', posting %></td>
-            <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
-            <td><%= link_to 'Delete', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
+          <th>#</th>
+          <th>Company</th>
+          <th>Position</th>
+          <th>Date Applied</th>
+          <th>User Email</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @postings.each do |posting| %>
+          <tr>
+            <td><%= posting.id %></td>
+            <td><%= posting.company %></td>
+            <td><%= posting.position %></td>
+            <td><%= posting.date %></td>
+            <td><%= posting.user.email if posting.user %></td>
 
-  <% if user_signed_in? %>
-    <%= link_to 'New Posting', new_posting_path %>
-  <% end %>
+            <% if posting.user == current_user %>
+              <td><%= link_to 'Show', posting %></td>
+              <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
+              <td><%= link_to 'Delete', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
+    <br>
+
+    <% if user_signed_in? %>
+      <%= link_to 'New Posting', new_posting_path %>
+    <% end %>
+
+  </div>
 </div>

@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-	padding-top: 100px;
+.parallax-postings {
+	height: 30%;
+	// background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url('work-harder.jpg');
+	// background-attachment: fixed;
+ //    background-position: center;
+ //    background-repeat: no-repeat;
+ //    background-size: cover;
+}
+
+#postings-headline {
+	color: white;
+	padding-top: 150px;
+  letter-spacing: 4px;
+}
+
+#postings-sub-headline {
+	color: white;
+	letter-spacing: 2px;
 }
