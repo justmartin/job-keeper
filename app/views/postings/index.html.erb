@@ -5,7 +5,9 @@
 
 <div class="content-section">
   <div class="container">
-    <p id="notice"><%= notice %></p>
+    <% if notice %>
+      <p id="notice" class="alert alert-info"><%= notice %></p>
+    <% end %>
 
     <div class="text-center">
       <% if user_signed_in? %>
