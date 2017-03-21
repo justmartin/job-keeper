@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field card-block form-group">
     <%= f.label :company %>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field card-block form-group">
     <%= f.label :position %>
-    <%= f.text_field :position %>
+    <%= f.text_field :position, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :date %>
-    <%= f.date_select :date %>
+  <div class="field card-block form-group">
+    <%= f.label :date %><br>
+    <%= f.date_select :date, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions card-block form-group">
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
