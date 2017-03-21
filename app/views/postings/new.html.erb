@@ -1,5 +1,11 @@
-<h1>New Posting</h1>
+<div class="container devise-form">
+	<div class="card">
+		<h2 class="card-header">New Posting</h2>
 
-<%= render 'form', posting: @posting %>
+		<%= render 'form', posting: @posting %>
 
-<%= link_to 'Back', postings_path %>
+		<div class="card-footer">
+			<%= link_to 'Back', postings_path %>
+		</div>
+	</div>
+</div>
