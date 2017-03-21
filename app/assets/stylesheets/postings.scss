@@ -29,3 +29,10 @@
 .new-posting-button {
 	width: 400px;
 }
+
+@media (min-width: 1200px) {
+	.form-container{
+		width: 500px !important;
+		max-width: 100%;
+	}
+}
