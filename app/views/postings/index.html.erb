@@ -7,6 +7,12 @@
   <div class="container">
     <p id="notice"><%= notice %></p>
 
+    <div class="text-center">
+      <% if user_signed_in? %>
+        <%= link_to '+ New Posting', new_posting_path, class: "btn btn-primary new-posting-button" %>
+      <% end %>
+    </div>
+
     <table class="table table-striped">
       <thead class="thead-inverse">
         <tr>
@@ -39,9 +45,14 @@
 
     <br>
 
-    <% if user_signed_in? %>
-      <%= link_to 'New Posting', new_posting_path %>
-    <% end %>
+    <div class="text-center">
+      <% if user_signed_in? %>
+        <%= link_to 'New Posting', new_posting_path, class: "btn btn-primary new-posting-button" %>
+      <% end %>
+    </div>
 
   </div>
+
+  <%= render "layouts/footer" %>
+
 </div>
