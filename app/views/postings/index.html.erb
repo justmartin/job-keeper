@@ -21,8 +21,8 @@
           <th>#</th>
           <th>Company</th>
           <th>Position</th>
+          <th>Link</th>
           <th>Date Applied</th>
-          <th>User Email</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -33,8 +33,8 @@
             <td><%= posting.id %></td>
             <td><%= posting.company %></td>
             <td><%= posting.position %></td>
+            <td><%= posting.link %></td>
             <td><%= posting.date %></td>
-            <td><%= posting.user.email if posting.user %></td>
 
             <% if posting.user == current_user %>
               <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
