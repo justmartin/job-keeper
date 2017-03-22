@@ -33,7 +33,7 @@
             <td><%= posting.id %></td>
             <td><%= posting.company %></td>
             <td><%= posting.position %></td>
-            <td><%= posting.link %></td>
+            <td><a href="<%= posting.link %>" target="_blank"><%= posting.link %></a></td>
             <td><%= posting.date %></td>
 
             <% if posting.user == current_user %>
