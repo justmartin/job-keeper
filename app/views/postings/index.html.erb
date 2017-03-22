@@ -38,8 +38,8 @@
             <td><%= posting.date %></td>
 
             <% if posting.user == current_user %>
-              <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
-              <td><%= link_to 'Delete', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to '<span class="fa fa-pencil-square-o" aria-hidden="true"></span>'.html_safe, edit_posting_path(posting) %></td>
+              <td><%= link_to '<span class="fa fa-trash-o" aria-hidden="true"></span>'.html_safe, posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>
           </tr>
         <% end %>
