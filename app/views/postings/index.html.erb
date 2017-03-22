@@ -28,9 +28,10 @@
       </thead>
 
       <tbody>
+        <% count = 0 %>
         <% @postings.each do |posting| %>
           <tr>
-            <td><%= posting.id %></td>
+            <td><%= count += 1 %></td>
             <td><%= posting.company %></td>
             <td><%= posting.position %></td>
             <td><a href="<%= posting.link %>" target="_blank"><%= posting.link %></a></td>
