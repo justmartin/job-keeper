@@ -52,6 +52,6 @@ class PostingsController < ApplicationController
     end
 
     def posting_params
-      params.require(:posting).permit(:company, :position, :date)
+      params.require(:posting).permit(:company, :position, :date, :link)
     end
 end
