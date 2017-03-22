@@ -11,7 +11,7 @@
 
     <div class="text-center">
       <% if user_signed_in? %>
-        <%= link_to '+ New Posting', new_posting_path, class: "btn btn-primary new-posting-button" %>
+        <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Posting'.html_safe, new_posting_path, class: "btn btn-primary new-posting-button" %>
       <% end %>
     </div>
 
@@ -38,8 +38,8 @@
             <td><%= posting.date %></td>
 
             <% if posting.user == current_user %>
-              <td><%= link_to '<span class="fa fa-pencil-square-o" aria-hidden="true"></span>'.html_safe, edit_posting_path(posting) %></td>
-              <td><%= link_to '<span class="fa fa-trash-o" aria-hidden="true"></span>'.html_safe, posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_posting_path(posting) %></td>
+              <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>
           </tr>
         <% end %>
@@ -50,7 +50,7 @@
 
     <div class="text-center">
       <% if user_signed_in? %>
-        <%= link_to '+ New Posting', new_posting_path, class: "btn btn-primary new-posting-button" %>
+        <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Posting'.html_safe, new_posting_path, class: "btn btn-primary new-posting-button" %>
       <% end %>
     </div>
 
