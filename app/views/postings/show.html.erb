@@ -1,6 +1,8 @@
 <div class="container devise-form form-container">
 	<div class="card">
-		<p id="notice"><%= notice %></p>
+		<% if notice %>
+			<p id="notice" class="alert alert-info"><%= notice %></p>
+		<% end %>
 
 		<p class="field card-block form-group">
 		  <strong>Company:</strong>
