@@ -4,7 +4,7 @@ class PostingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show, :create, :edit, :update, :destroy]
 
   def index
-    @postings = current_user.postings.paginate(page: params[:page], per_page: 15)
+    @postings = current_user.postings.paginate(page: params[:page], per_page: 5)
   end
 
   def show

@@ -46,15 +46,13 @@
       </tbody>
     </table>
 
-    <br>
-
+    <%= will_paginate @postings, class: "text-center posting-pagination" %>
+    
     <div class="text-center">
       <% if user_signed_in? %>
         <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Posting'.html_safe, new_posting_path, class: "btn btn-primary new-posting-button" %>
       <% end %>
     </div>
-
-    <%= will_paginate @postings %>
 
   </div>
 

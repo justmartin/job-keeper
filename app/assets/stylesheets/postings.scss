@@ -30,6 +30,42 @@
 	width: 400px;
 }
 
+// pagination bar
+.posting-pagination {
+  padding: 1em;
+}
+
+.posting-pagination a, .posting-pagination span {
+    padding: 0.2em 0.3em; 
+}
+
+.posting-pagination .disabled {
+    color: #aaaaaa; 
+}
+
+.posting-pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; 
+}
+
+.posting-pagination a {
+    text-decoration: none;
+    color: black; 
+}
+
+.posting-pagination a:hover, .posting-pagination a:focus {
+    text-decoration: underline; 
+}
+
 @media (min-width: 1200px) {
 	.form-container{
 		width: 500px !important;
