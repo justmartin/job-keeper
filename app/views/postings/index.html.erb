@@ -15,36 +15,38 @@
       <% end %>
     </div>
 
-    <table class="table table-striped table-responsive">
-      <thead class="thead-inverse">
-        <tr>
-          <th>#</th>
-          <th>Company</th>
-          <th>Position</th>
-          <th>Link</th>
-          <th>Date Applied</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% count = 0 %>
-        <% @postings.each do |posting| %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-inverse">
           <tr>
-            <td><%= count += 1 %></td>
-            <td><%= posting.company %></td>
-            <td><%= posting.position %></td>
-            <td><a href="<%= posting.link %>" target="_blank"><%= posting.link %></a></td>
-            <td><%= posting.date %></td>
-
-            <% if posting.user == current_user %>
-              <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_posting_path(posting) %></td>
-              <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
+            <th>#</th>
+            <th>Company</th>
+            <th>Position</th>
+            <th>Link</th>
+            <th>Date Applied</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          <% count = 0 %>
+          <% @postings.each do |posting| %>
+            <tr>
+              <td><%= count += 1 %></td>
+              <td><%= posting.company %></td>
+              <td><%= posting.position %></td>
+              <td><a href="<%= posting.link %>" target="_blank"><%= posting.link %></a></td>
+              <td><%= posting.date %></td>
+
+              <% if posting.user == current_user %>
+                <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_posting_path(posting) %></td>
+                <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
     <%= will_paginate @postings, class: "text-center posting-pagination" %>  
     
