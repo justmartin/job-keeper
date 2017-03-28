@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .parallax-postings {
-	height: 40%;
+	height: 50%;
 	// background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url('work-harder.jpg');
 	// background-attachment: fixed;
  //    background-position: center;
@@ -13,7 +13,7 @@
 
 #postings-headline {
 	color: white;
-	padding-top: 130px;
+	padding-top: 15%;
   letter-spacing: 4px;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .new-posting-button {
-	width: 35%;
+	width: 45%;
 }
 
 // pagination bar
@@ -73,4 +73,10 @@
 		width: 500px !important;
 		max-width: 100%;
 	}
+}
+
+@media (max-width: 400px) {
+  #postings-headline {
+    padding-top: 35%;
+  }
 }
