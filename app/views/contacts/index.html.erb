@@ -38,8 +38,8 @@
                 <td><%= contact.position %></td>
                 <td><%= contact.phone %></td>
                 <td><%= contact.email %></td>
-                <% if posting.user == current_user %>
-                  <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_contact_path(posting) %></td>
+                <% if contact.user == current_user %>
+                  <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_contact_path(contact) %></td>
                   <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 <% end %>
             </tr>
