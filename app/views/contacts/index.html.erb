@@ -19,6 +19,7 @@
       <table class="table table-striped">
         <thead class="thead-inverse">
           <tr>
+            <th>#</th>
             <th>Name</th>
             <th>Company</th>
             <th>Position</th>
@@ -33,15 +34,15 @@
           <% @contacts.each do |contact| %>
             <tr>
               <td><%= count += 1 %></td>
-                <td><%= contact.name %></td>
-                <td><%= contact.company %></td>
-                <td><%= contact.position %></td>
-                <td><%= contact.phone %></td>
-                <td><%= contact.email %></td>
-                <% if contact.user == current_user %>
-                  <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_contact_path(contact) %></td>
-                  <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <% end %>
+              <td><%= contact.name %></td>
+              <td><%= contact.company %></td>
+              <td><%= contact.position %></td>
+              <td><%= contact.phone %></td>
+              <td><%= contact.email %></td>
+              <% if contact.user == current_user %>
+                <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_contact_path(contact) %></td>
+                <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>

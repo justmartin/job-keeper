@@ -48,7 +48,7 @@ class ContactsController < ApplicationController
 
     def correct_user
       @contact = current_user.contacts.find_by(id: params[:id])
-      redirect_to contacts_path, notice: "Not authorized to edit this posting." if @posting.nil?
+      redirect_to contacts_path, notice: "Not authorized to edit this contact." if @contact.nil?
     end
 
     def contact_params
