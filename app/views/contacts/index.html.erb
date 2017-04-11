@@ -52,7 +52,7 @@
     <%= will_paginate @postings, class: "text-center posting-pagination" %>  
     
     <div class="text-center">
-      <% if user_signed_in? %>
+      <% if user_signed_in? && count >= 10 %>
         <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Contact'.html_safe, new_contact_path, class: "btn btn-primary new-posting-button" %>
       <% end %>
     </div>
