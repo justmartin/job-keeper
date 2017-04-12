@@ -9,6 +9,24 @@
       <p id="notice" class="alert alert-info"><%= notice %></p>
     <% end %>
 
+    <div class="row text-center links-container">
+      <div class="col">
+        <a href="/postings" class="posting-contact-link">
+          <i class="fa fa-clipboard" aria-hidden="true"></i>
+          Postings
+        </a>
+      </div>
+
+      <div class="col">
+        <strong>
+          <a href="/contacts" class="posting-contact-link">
+            <i class="fa fa-address-card-o" aria-hidden="true"></i>
+            Contacts
+          </a>
+        </strong>
+      </div>
+    </div>
+
     <div class="text-center">
       <% if user_signed_in? %>
         <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Contact'.html_safe, new_contact_path, class: "btn btn-primary new-posting-button" %>
