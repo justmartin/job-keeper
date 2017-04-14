@@ -56,11 +56,11 @@
               <td><%= posting.position %></td>
               <td><a href="<%= posting.link %>" target="_blank"><%= posting.link %></a></td>
               <td><%= posting.date %></td>
-              <td class="text-center">
+              <td>
                 <% if posting.response == false %>
-                  <%= "N" %>
+                  <%= "Nope" %>
                 <% else %>
-                  <%= "Y" %>
+                  <%= "Yup" %>
                 <% end %>
               </td>
 
