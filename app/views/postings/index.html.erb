@@ -56,7 +56,13 @@
               <td><%= posting.position %></td>
               <td><a href="<%= posting.link %>" target="_blank"><%= posting.link %></a></td>
               <td><%= posting.date %></td>
-              <td><%= posting.response %></td>
+              <td class="text-center">
+                <% if posting.response == false %>
+                  <%= "N" %>
+                <% else %>
+                  <%= "Y" %>
+                <% end %>
+              </td>
 
               <% if posting.user == current_user %>
                 <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_posting_path(posting) %></td>
