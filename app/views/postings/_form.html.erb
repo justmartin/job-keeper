@@ -31,6 +31,11 @@
     <%= f.date_select :date, class: "form-control" %>
   </div>
 
+  <div class="field card-block form-group">
+    <%= f.label :response %><br>
+    <%= f.check_box :response, class: "form-control" %>
+  </div>
+
   <div class="actions card-block form-group">
     <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
