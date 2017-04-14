@@ -19,6 +19,11 @@
 		  <%= @posting.date %>
 		</p>
 
+		<p class="field card-block form-group">
+		  <strong>Response:</strong>
+		  <%= @posting.response %>
+		</p>
+
 		<div class="card-footer">
 			<% if @posting.user == current_user %>
 				<%= link_to 'Edit', edit_posting_path(@posting) %> |
